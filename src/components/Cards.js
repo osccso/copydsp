@@ -13,17 +13,19 @@ const Cards = () => {
             as he speaks on the future of computing.
           </Card.Text>
           <div>
-            <p>
+            <p className='profe'>
               Jensen Huang
-              <span>, Founder and CEO, NVIDIA</span>
+              <span class='profeSpan'>, Founder and CEO, NVIDIA</span>
             </p>
-            <p>
+            <p className='propiety'>
               Industry Segment:
-              <span>All Industries</span>
+              <span className='profeSpan2'>All Industries</span>
             </p>
-            <p>
+            <p className='propiety'>
               Primary Topic:
-              <span>AI Strategy for Business Leaders</span>
+              <span className='profeSpan2'>
+                AI Strategy for Business Leaders
+              </span>
             </p>
           </div>
         </Card.Body>
