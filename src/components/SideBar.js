@@ -2,6 +2,9 @@ import React from 'react';
 import { Accordion, FormControl, InputGroup } from 'react-bootstrap';
 
 const SideBar = () => {
+
+  
+
   return (
     <div className='sideBar'>
       <div className='filterCont'>
