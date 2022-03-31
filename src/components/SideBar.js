@@ -3,8 +3,6 @@ import { Accordion, FormControl, InputGroup } from 'react-bootstrap';
 
 const SideBar = () => {
 
-  
-
   return (
     <div className='sideBar'>
       <div className='filterCont'>
@@ -23,13 +21,7 @@ const SideBar = () => {
       </div>
       <div className='Acordion'>
         <Accordion defaultActiveKey='0'>
-          <Accordion.Item eventKey='0'>
-            <Accordion.Header>Accordion Item #1</Accordion.Header>
-            <Accordion.Body>
-              <input type='checkbox' />
-              <label for=''>industry</label>
-            </Accordion.Body>
-          </Accordion.Item>
+          
           <Accordion.Item eventKey='1'>
             <Accordion.Header>Accordion Item #2</Accordion.Header>
             <Accordion.Body>
@@ -46,28 +38,28 @@ const SideBar = () => {
             <Accordion.Header>Accordion Item #1</Accordion.Header>
             <Accordion.Body>
               <input type='checkbox' />
-              <label for=''>industry</label>
+              <label htmlFor=''>industry</label>
             </Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey='3'>
             <Accordion.Header>Accordion Item #1</Accordion.Header>
             <Accordion.Body>
               <input type='checkbox' />
-              <label for=''>industry</label>
+              <label htmlFor=''>industry</label>
             </Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey='4'>
             <Accordion.Header>Accordion Item #1</Accordion.Header>
             <Accordion.Body>
               <input type='checkbox' />
-              <label for=''>industry</label>
+              <label htmlFor=''>industry</label>
             </Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey='5'>
             <Accordion.Header>Accordion Item #1</Accordion.Header>
             <Accordion.Body>
               <input type='checkbox' />
-              <label for=''>industry</label>
+              <label htmlFor=''>industry</label>
             </Accordion.Body>
           </Accordion.Item>
         </Accordion>
