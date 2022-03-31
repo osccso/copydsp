@@ -2,9 +2,6 @@ import React from 'react';
 import { Accordion, FormControl, InputGroup } from 'react-bootstrap';
 
 const SideBar = () => {
-
-  
-
   return (
     <div className='sideBar'>
       <div className='filterCont'>
@@ -27,7 +24,7 @@ const SideBar = () => {
             <Accordion.Header>Accordion Item #1</Accordion.Header>
             <Accordion.Body>
               <input type='checkbox' />
-              <label for=''>industry</label>
+              <label>industry</label>
             </Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey='1'>
@@ -46,28 +43,28 @@ const SideBar = () => {
             <Accordion.Header>Accordion Item #1</Accordion.Header>
             <Accordion.Body>
               <input type='checkbox' />
-              <label for=''>industry</label>
+              <label>industry</label>
             </Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey='3'>
             <Accordion.Header>Accordion Item #1</Accordion.Header>
             <Accordion.Body>
               <input type='checkbox' />
-              <label for=''>industry</label>
+              <label>industry</label>
             </Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey='4'>
             <Accordion.Header>Accordion Item #1</Accordion.Header>
             <Accordion.Body>
               <input type='checkbox' />
-              <label for=''>industry</label>
+              <label>industry</label>
             </Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey='5'>
             <Accordion.Header>Accordion Item #1</Accordion.Header>
             <Accordion.Body>
               <input type='checkbox' />
-              <label for=''>industry</label>
+              <label>industry</label>
             </Accordion.Body>
           </Accordion.Item>
         </Accordion>
