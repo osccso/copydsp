@@ -27,6 +27,7 @@ body {
 
 }
 
+
 .Acordion{
   border: 1px solid red;
   width: 400px;
@@ -43,5 +44,29 @@ body {
   display: flex;
   justify-content: space-between;
   margin: 15px 
+}
+
+/** Cards */
+
+.contentCards {
+  border: 1px solid red;
+  width: 650px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+}
+
+.ContCards{
+  border: 1px solid red;
+  width: 600px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
 }
 
