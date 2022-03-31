@@ -2,7 +2,6 @@ import React from 'react';
 import { Accordion, FormControl, InputGroup } from 'react-bootstrap';
 
 const SideBar = () => {
-
   return (
     <div className='sideBar'>
       <div className='filterCont'>
@@ -21,9 +20,15 @@ const SideBar = () => {
       </div>
       <div className='Acordion'>
         <Accordion defaultActiveKey='0'>
-          
+          <Accordion.Item eventKey='0'>
+            <Accordion.Header>Industry Segment</Accordion.Header>
+            <Accordion.Body>
+              <input type='checkbox' />
+              <label>industry</label>
+            </Accordion.Body>
+          </Accordion.Item>
           <Accordion.Item eventKey='1'>
-            <Accordion.Header>Accordion Item #2</Accordion.Header>
+            <Accordion.Header>Primary Topic</Accordion.Header>
             <Accordion.Body>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -35,31 +40,31 @@ const SideBar = () => {
             </Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey='2'>
-            <Accordion.Header>Accordion Item #1</Accordion.Header>
+            <Accordion.Header>Other Collections</Accordion.Header>
             <Accordion.Body>
               <input type='checkbox' />
-              <label htmlFor=''>industry</label>
+              <label>industry</label>
             </Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey='3'>
-            <Accordion.Header>Accordion Item #1</Accordion.Header>
+            <Accordion.Header>Session Type</Accordion.Header>
             <Accordion.Body>
               <input type='checkbox' />
-              <label htmlFor=''>industry</label>
+              <label>industry</label>
             </Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey='4'>
-            <Accordion.Header>Accordion Item #1</Accordion.Header>
+            <Accordion.Header>Audience Type</Accordion.Header>
             <Accordion.Body>
               <input type='checkbox' />
-              <label htmlFor=''>industry</label>
+              <label>industry</label>
             </Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey='5'>
-            <Accordion.Header>Accordion Item #1</Accordion.Header>
+            <Accordion.Header>Audience Level</Accordion.Header>
             <Accordion.Body>
               <input type='checkbox' />
-              <label htmlFor=''>industry</label>
+              <label>industry</label>
             </Accordion.Body>
           </Accordion.Item>
         </Accordion>

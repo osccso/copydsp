@@ -1,4 +1,5 @@
 import React from 'react';
+import Cards from './Cards';
 import Navbar from './Navbar';
 
 const ContentCards = () => {
@@ -7,7 +8,9 @@ const ContentCards = () => {
       <div>
         <Navbar />
       </div>
-      <div className='ContCards'></div>
+      <div className='ContCards'>
+        <Cards />
+      </div>
     </div>
   );
 };
