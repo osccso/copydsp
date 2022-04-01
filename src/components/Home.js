@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect,useContext } from 'react';
 import ContentCards from './ContentCards';
+import { SessionContext } from '../useContext/SessionContext';
 import SideBar from './SideBar';
 // import { getData } from '../helpers/functions'
 import { url } from '../helpers/url';
 import axios from 'axios';
 
 const Home = () => {
+  // const {dataMain,setDataMain}= useContext(SessionContext)
   const [data, setData] = useState(undefined);
   const [fieldsUnique, setfieldsUnique] = useState({});
 
@@ -26,6 +28,7 @@ const Home = () => {
   };
 
   //get data from the api
+  console.log(data)
   const getData = () => {
     axios
       .get(url)
@@ -36,10 +39,11 @@ const Home = () => {
       })
       .catch((error) => console.log(error));
   };
+  // setDataMain(data)
   return (
     <div className='home'>
       <SideBar fieldsUnique={fieldsUnique} />
-      <ContentCards />
+      <ContentCards data={data} />
     </div>
   );
 };
