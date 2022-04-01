@@ -1,11 +1,10 @@
-import Cards from './Cards';
 import Navbar from './Navbar';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Card } from 'react-bootstrap';
 
 const ContentCards = ({ data, filterWord = [], searchInput = '' }) => {
   console.log(filterWord[0]);
-  const [dataFiltered, setDataFiltered] = useState([]);
+  const [dataFiltered] = useState([]);
   let array = [];
 
   if (filterWord.length > 0) {

@@ -3,16 +3,8 @@ import { Card } from 'react-bootstrap';
 
 const Cards = ({ item }) => {
   console.log(item);
-  const {
-    industry_segment,
-    description,
-    audience_level,
-    speakers,
-    lenguage,
-    primary_topic,
-    session_type,
-    title,
-  } = item;
+  const { industry_segment, description, speakers, primary_topic, title } =
+    item;
   return (
     <div className='cardPaint'>
       <Card>
