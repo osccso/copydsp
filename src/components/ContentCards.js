@@ -6,15 +6,19 @@ import { Card } from 'react-bootstrap';
 const ContentCards = ({ data, filterWord = '' }) => {
   console.log(filterWord.toString());
   const [dataFiltered, setDataFiltered] = useState([]);
+  const array = [];
 
-  useEffect(() => {
-    data?.forEach((el) =>
-      el.industry_segment === filterWord.toString() ||
-      el.primary_topic === filterWord.toString()
-        ? setDataFiltered([...dataFiltered, el])
-        : console.log('chao')
-    );
-  }, [filterWord]);
+  data?.forEach((el) =>
+    el.industry_segment === filterWord.toString() ||
+    el.primary_topic === filterWord.toString()
+      ? array.push(el)
+      : console.log('chao')
+  );
+
+  console.log(array);
+  // useEffect(() => {
+
+  // }, [filterWord]);
 
   console.log(dataFiltered);
   return (
