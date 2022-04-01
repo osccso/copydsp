@@ -13,7 +13,7 @@ const SideBar = ({ fieldsUnique }) => {
         <h1>Filters</h1>
         <span>Clear</span>
       </div>
-      {/* <div>
+      <div>
         <InputGroup className='mb-3'>
           <FormControl
             placeholder="Recipient's username"
@@ -65,8 +65,8 @@ const SideBar = ({ fieldsUnique }) => {
             </Accordion.Body>
           </Accordion.Item>
         </Accordion>
-      </div> */}
-      {industry_segment.map((field) => (
+      </div>
+      {/* {industry_segment?.map((field) => (
         <div>
           <Accordion defaultActiveKey='0'>
             <Accordion.Item eventKey='0'>
@@ -75,7 +75,7 @@ const SideBar = ({ fieldsUnique }) => {
             </Accordion.Item>
           </Accordion>
         </div>
-      ))}
+      ))} */}
     </div>
   );
 };

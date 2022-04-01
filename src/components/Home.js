@@ -6,13 +6,13 @@ import { url } from '../helpers/url';
 import axios from 'axios';
 
 const Home = () => {
-  const [data, setData] = useState(undefined);
+  const [data, setData] = useState({});
   const [fieldsUnique, setfieldsUnique] = useState({});
 
   let fieldsRequired = {};
 
   useEffect(() => {
-    if (data === undefined) getData();
+    getData();
   }, []);
 
   //get a set of unique fields
