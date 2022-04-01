@@ -3,19 +3,27 @@ import Navbar from './Navbar';
 import { useEffect, useState } from 'react';
 import { Card } from 'react-bootstrap';
 
-const ContentCards = ({ data, filterWord = '', searchInput }) => {
-  console.log(filterWord.toString());
+const ContentCards = ({ data, filterWord = [] }) => {
+  console.log(filterWord[0]);
   const [dataFiltered, setDataFiltered] = useState([]);
-  const array = [];
+  let array = [];
+  if (filterWord.length > 0) {
+    filterWord?.forEach((word) =>
+      data?.forEach((el) =>
+        el.industry_segment === word ||
+        el.primary_topic === word ||
+        el.audience_level === word ||
+        el.lenguage === word ||
+        el.session_type === word ||
+        el.title === word
+          ? array.push(el)
+          : console.log('chao')
+      )
+    );
+  }
 
-  data?.forEach((el) =>
-    el.industry_segment === filterWord.toString() ||
-    el.primary_topic === filterWord.toString()
-      ? array.push(el)
-      : console.log('chao')
-  );
+  array = [...new Set(array)];
 
-  console.log(array);
   // useEffect(() => {
 
   // }, [filterWord]);
@@ -27,7 +35,7 @@ const ContentCards = ({ data, filterWord = '', searchInput }) => {
         <Navbar />
       </div>
       <div className='ContCards'>
-        {data?.map(
+        {array?.map(
           (
             {
               industry_segment,
