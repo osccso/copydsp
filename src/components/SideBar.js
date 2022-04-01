@@ -28,6 +28,7 @@ const SideBar = ({ fieldsUnique, setFilterWord, setSearchInput }) => {
       return null;
     }
     setFilters([...filters].filter((item) => item != target.value));
+    setSearchInput(target.value);
   };
   console.log(filters);
   setFilterWord(filters);

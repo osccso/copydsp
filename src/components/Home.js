@@ -31,6 +31,8 @@ const Home = () => {
 
   //get data from the api
   console.log(data);
+
+  console.log(searchInput);
   const getData = () => {
     axios
       .get(url)

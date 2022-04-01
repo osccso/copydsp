@@ -3,10 +3,11 @@ import Navbar from './Navbar';
 import { useEffect, useState } from 'react';
 import { Card } from 'react-bootstrap';
 
-const ContentCards = ({ data, filterWord = [] }) => {
+const ContentCards = ({ data, filterWord = [], searchInput = '' }) => {
   console.log(filterWord[0]);
   const [dataFiltered, setDataFiltered] = useState([]);
   let array = [];
+
   if (filterWord.length > 0) {
     filterWord?.forEach((word) =>
       data?.forEach((el) =>
@@ -29,6 +30,25 @@ const ContentCards = ({ data, filterWord = [] }) => {
   // }, [filterWord]);
 
   console.log(dataFiltered);
+
+  console.log(searchInput);
+  const searchWords = searchInput.toString().toLowerCase().split(' ');
+
+  if (searchWords.length > 0) {
+    searchWords?.forEach((word) =>
+      data?.forEach((el) =>
+        el.industry_segment.toLowerCase() === word ||
+        el.primary_topic.toLowerCase() === word ||
+        el.audience_level.toLowerCase() === word ||
+        el.lenguage.toLowerCase() === word ||
+        el.session_type.toLowerCase() === word ||
+        el.title.toLowerCase() === word
+          ? array.push(el)
+          : console.log('chao')
+      )
+    );
+  }
+
   return (
     <div className='contentCards'>
       <div>
