@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Accordion, FormControl, InputGroup } from 'react-bootstrap';
-// import SideBarItem from './SideBarItem';
 
 const SideBar = ({ fieldsUnique, setFilterWord, setSearchInput }) => {
   const [filters, setFilters] = useState([]);
@@ -36,32 +35,43 @@ const SideBar = ({ fieldsUnique, setFilterWord, setSearchInput }) => {
   return (
     <div className='sideBar'>
       <div className='filterCont'>
-        <h1>Filters</h1>
-        <span>Clear</span>
+        <h1 className='title'>Filters</h1>
+        <span className='clear'>Clear</span>
       </div>
-      <input type='text' onChange={handleOnChange} />
-      {fields?.map((field, index) => (
-        <div className='Acordion' key={index}>
-          <Accordion>
+      <div>
+        <InputGroup className='mb-3'>
+          <FormControl
+            placeholder='Search'
+            aria-label='Search'
+            onChange={handleOnChange}
+          />
+        </InputGroup>
+      </div>
+      <div className='Acordion'>
+        {fields?.map((field, index) => (
+          <Accordion key={index}>
             <Accordion.Item eventKey={index}>
               <Accordion.Header>{field.replace('_', ' ')}</Accordion.Header>
               <Accordion.Body>
                 {fieldsUnique[field]?.map((item, index) => (
-                  <div key={index}>
-                    <label htmlFor={item}>{item}</label>
+                  <div className='inputChecbox' key={index}>
                     <input
+                      className='checkbok'
                       value={item}
                       name={item}
                       type='checkbox'
                       onChange={handleOnChange}
                     />
+                    <label className='labelIn' htmlFor={item}>
+                      {item}
+                    </label>
                   </div>
                 ))}
               </Accordion.Body>
             </Accordion.Item>
           </Accordion>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };
