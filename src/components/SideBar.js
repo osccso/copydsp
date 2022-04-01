@@ -1,22 +1,19 @@
 import React from 'react';
 import { Accordion, FormControl, InputGroup } from 'react-bootstrap';
-import SideBarItem from './SideBarItem';
+// import SideBarItem from './SideBarItem';
 
-const SideBar = ({fieldsUnique}) => {
+const SideBar = ({ fieldsUnique }) => {
+  console.log(fieldsUnique.industry_segment);
+  const { industry_segment } = fieldsUnique;
 
-  // let {'industry_segment':y,'primary_topic':y,session_type,audience_level,audience_type,lenguage} = props
-  // let {industry_segment} = props
-  console.log(fieldsUnique)
-  // console.log(props)
-
-  // console.log(props.industry_segment)
+  console.log(industry_segment);
   return (
     <div className='sideBar'>
       <div className='filterCont'>
         <h1>Filters</h1>
         <span>Clear</span>
       </div>
-      <div>
+      {/* <div>
         <InputGroup className='mb-3'>
           <FormControl
             placeholder="Recipient's username"
@@ -30,9 +27,7 @@ const SideBar = ({fieldsUnique}) => {
         <Accordion defaultActiveKey='0'>
           <Accordion.Item eventKey='0'>
             <Accordion.Header>Industry Segment</Accordion.Header>
-            <Accordion.Body>
-              {/* {industry_segment.map(item => <SideBarItem props={item}/>)} */}
-            </Accordion.Body>
+            <Accordion.Body></Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey='1'>
             <Accordion.Header>Primary Topic</Accordion.Header>
@@ -70,7 +65,17 @@ const SideBar = ({fieldsUnique}) => {
             </Accordion.Body>
           </Accordion.Item>
         </Accordion>
-      </div>
+      </div> */}
+      {industry_segment.map((field) => (
+        <div>
+          <Accordion defaultActiveKey='0'>
+            <Accordion.Item eventKey='0'>
+              <Accordion.Header>{field}</Accordion.Header>
+              <Accordion.Body></Accordion.Body>
+            </Accordion.Item>
+          </Accordion>
+        </div>
+      ))}
     </div>
   );
 };
