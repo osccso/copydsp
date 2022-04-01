@@ -26,7 +26,7 @@ const ContentCards = ({ data, filterWord = '' }) => {
         <Navbar />
       </div>
       <div className='ContCards'>
-        {data?.map(
+        {array?.map(
           (
             {
               industry_segment,

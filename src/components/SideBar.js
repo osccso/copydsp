@@ -22,8 +22,11 @@ const SideBar = ({ fieldsUnique, setFilterWord }) => {
   };
   const fields = Object.keys(fieldsNew);
   const handleOnChange = ({ target }) => {
-    console.log(target.value);
-    setFilters([...filters, target.value]);
+    if (target.checked) {
+      setFilters([...filters, target.value]);
+      return null
+    }
+    setFilters([...filters].filter(item => item != target.value))
   };
   console.log(filters);
   setFilterWord(filters);
