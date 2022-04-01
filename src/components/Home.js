@@ -8,9 +8,10 @@ import axios from 'axios';
 
 const Home = () => {
   // const {dataMain,setDataMain}= useContext(SessionContext)
-  const [filterWord,setFilterWord] = useState()
+  const [filterWord, setFilterWord] = useState();
   const [data, setData] = useState(undefined);
   const [fieldsUnique, setfieldsUnique] = useState({});
+  const [searchInput, setSearchInput] = useState();
 
   let fieldsRequired = {};
 
@@ -30,6 +31,8 @@ const Home = () => {
 
   //get data from the api
   console.log(data);
+
+  console.log(searchInput);
   const getData = () => {
     axios
       .get(url)
@@ -41,10 +44,20 @@ const Home = () => {
       .catch((error) => console.log(error));
   };
   // setDataMain(data)
+
+  console.log(searchInput);
   return (
     <div className='home'>
-      <SideBar fieldsUnique={fieldsUnique} setFilterWord={setFilterWord} />
-      <ContentCards filterWord={filterWord} data={data} />
+      <SideBar
+        fieldsUnique={fieldsUnique}
+        setFilterWord={setFilterWord}
+        setSearchInput={setSearchInput}
+      />
+      <ContentCards
+        filterWord={filterWord}
+        data={data}
+        searchInput={searchInput}
+      />
     </div>
   );
 };
