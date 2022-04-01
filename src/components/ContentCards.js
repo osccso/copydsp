@@ -4,16 +4,20 @@ import { useEffect, useState } from 'react';
 import { Card } from 'react-bootstrap';
 
 const ContentCards = ({ data, filterWord = '' }) => {
-  console.log(filterWord.toString());
+  console.log(filterWord[0]);
   const [dataFiltered, setDataFiltered] = useState([]);
 
   useEffect(() => {
-    data?.forEach((el) =>
-      el.industry_segment === filterWord.toString() ||
-      el.primary_topic === filterWord.toString()
-        ? setDataFiltered([...dataFiltered, el])
-        : console.log('chao')
-    );
+    let arrays = data?.map((el) => 
+      {if (el.industry_segment === filterWord[0] || el.primary_topic === filterWord[0])
+       return el
+      }
+       );
+      // if(arrays !==undefined) arrays = arrays.filter=(item =>item !== undefined)
+       
+        // ? setDataFiltered([...dataFiltered, el])
+        // : console.log('chao')
+    console.log(arrays)
   }, [filterWord]);
 
   console.log(dataFiltered);
