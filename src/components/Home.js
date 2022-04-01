@@ -30,16 +30,12 @@ const Home = () => {
     axios
       .get(url)
       .then((resp) => {
-        console.log(resp.data);
         getAllfields(Object.keys(resp.data[0]), resp.data);
-        console.log('esto es asi');
         setfieldsUnique(fieldsRequired);
         setData(resp.data);
       })
       .catch((error) => console.log(error));
   };
-  console.log(data);
-  console.log(fieldsUnique);
   return (
     <div className='home'>
       <SideBar fieldsUnique={fieldsUnique} />
