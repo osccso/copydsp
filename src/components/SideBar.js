@@ -1,14 +1,19 @@
 import React from 'react';
 import { Accordion, FormControl, InputGroup } from 'react-bootstrap';
+// import SideBarItem from './SideBarItem';
 
-const SideBar = () => {
+const SideBar = ({ fieldsUnique }) => {
+  console.log(fieldsUnique.industry_segment);
+  const { industry_segment } = fieldsUnique;
+
+  console.log(industry_segment);
   return (
     <div className='sideBar'>
       <div className='filterCont'>
         <h1>Filters</h1>
         <span>Clear</span>
       </div>
-      <div>
+      {/* <div>
         <InputGroup className='mb-3'>
           <FormControl
             placeholder="Recipient's username"
@@ -22,39 +27,31 @@ const SideBar = () => {
         <Accordion defaultActiveKey='0'>
           <Accordion.Item eventKey='0'>
             <Accordion.Header>Industry Segment</Accordion.Header>
-            <Accordion.Body>
-              <input type='checkbox' />
-              <label>industry</label>
-            </Accordion.Body>
+            <Accordion.Body></Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey='1'>
             <Accordion.Header>Primary Topic</Accordion.Header>
             <Accordion.Body>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </Accordion.Body>
-          </Accordion.Item>
-          <Accordion.Item eventKey='2'>
-            <Accordion.Header>Other Collections</Accordion.Header>
-            <Accordion.Body>
               <input type='checkbox' />
               <label>industry</label>
             </Accordion.Body>
           </Accordion.Item>
-          <Accordion.Item eventKey='3'>
+          <Accordion.Item eventKey='2'>
             <Accordion.Header>Session Type</Accordion.Header>
             <Accordion.Body>
               <input type='checkbox' />
               <label>industry</label>
             </Accordion.Body>
           </Accordion.Item>
-          <Accordion.Item eventKey='4'>
+          <Accordion.Item eventKey='3'>
             <Accordion.Header>Audience Type</Accordion.Header>
+            <Accordion.Body>
+              <input type='checkbox' />
+              <label>industry</label>
+            </Accordion.Body>
+          </Accordion.Item>
+          <Accordion.Item eventKey='4'>
+            <Accordion.Header>Language</Accordion.Header>
             <Accordion.Body>
               <input type='checkbox' />
               <label>industry</label>
@@ -68,7 +65,17 @@ const SideBar = () => {
             </Accordion.Body>
           </Accordion.Item>
         </Accordion>
-      </div>
+      </div> */}
+      {industry_segment.map((field) => (
+        <div>
+          <Accordion defaultActiveKey='0'>
+            <Accordion.Item eventKey='0'>
+              <Accordion.Header>{field}</Accordion.Header>
+              <Accordion.Body></Accordion.Body>
+            </Accordion.Item>
+          </Accordion>
+        </div>
+      ))}
     </div>
   );
 };
