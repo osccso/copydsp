@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import ContentCards from './ContentCards';
-import { SessionContext } from '../useContext/SessionContext';
+
 import SideBar from './SideBar';
 // import { getData } from '../helpers/functions'
 import { url } from '../helpers/url';
