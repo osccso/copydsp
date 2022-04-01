@@ -1,74 +1,63 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Accordion, FormControl, InputGroup } from 'react-bootstrap';
+// import SideBarItem from './SideBarItem';
 
-const SideBar = () => {
+const SideBar = ({ fieldsUnique, setFilterWord }) => {
+  const [filters, setFilters] = useState([]);
+  const {
+    industry_segment,
+    audience_level,
+    lenguage,
+    primary_topic,
+    session_type,
+    title,
+  } = fieldsUnique;
+  const fieldsNew = {
+    industry_segment,
+    audience_level,
+    lenguage,
+    primary_topic,
+    session_type,
+    title,
+  };
+  const fields = Object.keys(fieldsNew);
+  const handleOnChange = ({ target }) => {
+    if (target.checked) {
+      setFilters([...filters, target.value]);
+      return null
+    }
+    setFilters([...filters].filter(item => item != target.value))
+  };
+  console.log(filters);
+  setFilterWord(filters);
   return (
     <div className='sideBar'>
       <div className='filterCont'>
         <h1>Filters</h1>
         <span>Clear</span>
       </div>
-      <div>
-        <InputGroup className='mb-3'>
-          <FormControl
-            placeholder="Recipient's username"
-            aria-label="Recipient's username"
-            aria-describedby='basic-addon2'
-          />
-          <InputGroup.Text id='basic-addon2'>@example.com</InputGroup.Text>
-        </InputGroup>
-      </div>
-      <div className='Acordion'>
-        <Accordion defaultActiveKey='0'>
-          <Accordion.Item eventKey='0'>
-            <Accordion.Header>Industry Segment</Accordion.Header>
-            <Accordion.Body>
-              <input type='checkbox' />
-              <label>industry</label>
-            </Accordion.Body>
-          </Accordion.Item>
-          <Accordion.Item eventKey='1'>
-            <Accordion.Header>Primary Topic</Accordion.Header>
-            <Accordion.Body>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </Accordion.Body>
-          </Accordion.Item>
-          <Accordion.Item eventKey='2'>
-            <Accordion.Header>Other Collections</Accordion.Header>
-            <Accordion.Body>
-              <input type='checkbox' />
-              <label>industry</label>
-            </Accordion.Body>
-          </Accordion.Item>
-          <Accordion.Item eventKey='3'>
-            <Accordion.Header>Session Type</Accordion.Header>
-            <Accordion.Body>
-              <input type='checkbox' />
-              <label>industry</label>
-            </Accordion.Body>
-          </Accordion.Item>
-          <Accordion.Item eventKey='4'>
-            <Accordion.Header>Audience Type</Accordion.Header>
-            <Accordion.Body>
-              <input type='checkbox' />
-              <label>industry</label>
-            </Accordion.Body>
-          </Accordion.Item>
-          <Accordion.Item eventKey='5'>
-            <Accordion.Header>Audience Level</Accordion.Header>
-            <Accordion.Body>
-              <input type='checkbox' />
-              <label>industry</label>
-            </Accordion.Body>
-          </Accordion.Item>
-        </Accordion>
-      </div>
+      {fields?.map((field, index) => (
+        <div className='Acordion' key={index}>
+          <Accordion>
+            <Accordion.Item eventKey={index}>
+              <Accordion.Header>{field.replace('_', ' ')}</Accordion.Header>
+              <Accordion.Body>
+                {fieldsUnique[field]?.map((item, index) => (
+                  <div key={index}>
+                    <label htmlFor={item}>{item}</label>
+                    <input
+                      value={item}
+                      name={item}
+                      type='checkbox'
+                      onChange={handleOnChange}
+                    />
+                  </div>
+                ))}
+              </Accordion.Body>
+            </Accordion.Item>
+          </Accordion>
+        </div>
+      ))}
     </div>
   );
 };
