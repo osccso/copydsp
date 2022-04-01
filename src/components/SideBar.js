@@ -2,10 +2,12 @@ import React from 'react';
 import { Accordion, FormControl, InputGroup } from 'react-bootstrap';
 import SideBarItem from './SideBarItem';
 
-const SideBar = ({props}) => {
-  // let {industry_segment,primary_topic,session_type,audience_level,audience_type,lenguage} = props
+const SideBar = ({fieldsUnique}) => {
+
+  // let {'industry_segment':y,'primary_topic':y,session_type,audience_level,audience_type,lenguage} = props
   // let {industry_segment} = props
-  console.log(props)
+  console.log(fieldsUnique)
+  // console.log(props)
 
   // console.log(props.industry_segment)
   return (

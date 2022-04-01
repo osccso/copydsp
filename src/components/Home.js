@@ -32,7 +32,7 @@ const Home = () => {
   console.log(fieldsUnique)
   return (
     <div className='home'>
-      <SideBar props={fieldsUnique} />
+      <SideBar filedsUnique= {fieldsUnique} />
       <ContentCards />
     </div>
   );
