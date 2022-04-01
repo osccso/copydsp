@@ -15,7 +15,7 @@ const Cards = () => {
           <div>
             <p className='profe'>
               Jensen Huang
-              <span class='profeSpan'>, Founder and CEO, NVIDIA</span>
+              <span className='profeSpan'>, Founder and CEO, NVIDIA</span>
             </p>
             <p className='propiety'>
               Industry Segment:

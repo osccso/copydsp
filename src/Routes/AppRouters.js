@@ -7,8 +7,8 @@ import RelatedTopics from "../components/RelatedTopics";
 
 function AppRouters() {
     const [sessions, setSessions] = useState({
-        description: "Global changes in eastern economy",
-        primary_topic: "Economy"
+        description: "primary",
+        primary_topic: "primary_topic"
     });
     return (
         <SessionContext.Provider value={{ sessions, setSessions }}>
