@@ -3,7 +3,7 @@ import Navbar from './Navbar';
 import { useEffect, useState } from 'react';
 import { Card } from 'react-bootstrap';
 
-const ContentCards = ({ data, filterWord = '' }) => {
+const ContentCards = ({ data, filterWord = '', searchInput }) => {
   console.log(filterWord.toString());
   const [dataFiltered, setDataFiltered] = useState([]);
   const array = [];

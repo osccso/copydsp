@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { Accordion, FormControl, InputGroup } from 'react-bootstrap';
 // import SideBarItem from './SideBarItem';
 
-const SideBar = ({ fieldsUnique, setFilterWord }) => {
+const SideBar = ({ fieldsUnique, setFilterWord, setSearchInput }) => {
   const [filters, setFilters] = useState([]);
+
   const {
     industry_segment,
     audience_level,
@@ -24,15 +25,18 @@ const SideBar = ({ fieldsUnique, setFilterWord }) => {
   const handleOnChange = ({ target }) => {
     console.log(target.value);
     setFilters([...filters, target.value]);
+    setSearchInput(target.value);
   };
   console.log(filters);
   setFilterWord(filters);
+
   return (
     <div className='sideBar'>
       <div className='filterCont'>
         <h1>Filters</h1>
         <span>Clear</span>
       </div>
+      <input type='text' onChange={handleOnChange} />
       {fields?.map((field, index) => (
         <div className='Acordion' key={index}>
           <Accordion>
