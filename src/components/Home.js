@@ -8,6 +8,7 @@ import axios from 'axios';
 
 const Home = () => {
   // const {dataMain,setDataMain}= useContext(SessionContext)
+  const [filterWord,setFilterWord] = useState()
   const [data, setData] = useState(undefined);
   const [fieldsUnique, setfieldsUnique] = useState({});
 
@@ -42,8 +43,8 @@ const Home = () => {
   // setDataMain(data)
   return (
     <div className='home'>
-      <SideBar fieldsUnique={fieldsUnique} />
-      <ContentCards data={data} />
+      <SideBar fieldsUnique={fieldsUnique} setFilterWord={setFilterWord} />
+      <ContentCards filterWord={filterWord} data={data} />
     </div>
   );
 };

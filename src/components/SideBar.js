@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import { Accordion, FormControl, InputGroup } from 'react-bootstrap';
 // import SideBarItem from './SideBarItem';
 
-const SideBar = ({ fieldsUnique }) => {
+const SideBar = ({ fieldsUnique,setFilterWord }) => {
   const [filters,setFilters] = useState([])
   const {industry_segment, audience_level, lenguage, primary_topic, session_type,title} = fieldsUnique;
   const fieldsNew = {industry_segment, audience_level, lenguage, primary_topic, session_type,title} 
@@ -12,7 +12,7 @@ const SideBar = ({ fieldsUnique }) => {
     setFilters([...filters,target.value])
   }
   console.log(filters)
-  
+  setFilterWord(filters)
   return (
     <div className='sideBar'>
       <div className='filterCont'>

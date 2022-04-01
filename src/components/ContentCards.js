@@ -3,9 +3,8 @@ import Navbar from './Navbar';
 import { useState } from 'react';
 import { Card } from 'react-bootstrap';
 
-const ContentCards = ({data}) => {
-  // const {industry_segment, description,audience_level, speakers,lenguage, primary_topic, session_type,title}  = data?
-  console.log(data)
+const ContentCards = ({data,filterWord}) => {
+  console.log(filterWord);
   return (
     <div className='contentCards'>
       <div>
